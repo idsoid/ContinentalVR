@@ -14,14 +14,14 @@ public class PopupOption : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Palm"))
+        if (other.CompareTag("Hand"))
         {
             circleCanvas.gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Palm"))
+        if (other.CompareTag("Hand"))
         {
             circleFill.fillAmount = 0;
             circleCanvas.gameObject.SetActive(false);
@@ -43,11 +43,11 @@ public class PopupOption : MonoBehaviour
         {
             mainBox.GetComponent<MeshRenderer>().material.color = GetComponent<MeshRenderer>().material.color;
             circleFill.fillAmount = 0;
-            gameObject.SetActive(false);
             foreach (var option in otherOptions)
             {
                 option.SetActive(false);
             }
+            gameObject.SetActive(false);
         }
     }
 }

@@ -9,9 +9,9 @@ public class BoxOption : MonoBehaviour
 
     //Hand variables
     private bool handReady = true;
-    private bool handIn = false;
+    private bool handLeft = false;
+    private float handInTimer = 0.0f;
     private float handPosY;
-    private float swipeCooldown = 0.0f;
 
     //Object variables
     private Material cubeMaterial;
@@ -27,38 +27,74 @@ public class BoxOption : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Finger") && handReady && gameManager.GetSwipe())
+        if (other.CompareTag("Hand") && handReady)
         {
             handReady = false;
-            handIn = true;
             SaveHandPos(other);
-            swipeCooldown = 1.0f;
         }
-        else if (other.CompareTag("Palm") && !gameManager.GetSwipe() && !boxOptions[0].activeSelf)
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Hand") && !handReady && !boxOptions[0].activeSelf && !circleCanvas.gameObject.activeSelf)
         {
-            circleCanvas.gameObject.SetActive(true);
+            if (handInTimer > 0)
+            {
+                handInTimer -= Time.deltaTime;
+            }
+            else if (handInTimer <= 0)
+            {
+                handInTimer = 1.25f;
+                circleCanvas.gameObject.SetActive(true);
+            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Finger") && handIn && swipeCooldown > 0.0f && gameManager.GetSwipe())
+        if (other.CompareTag("Hand") && !boxOptions[0].activeSelf && !handLeft)
         {
-            handIn = false;
+            handLeft = true;
+            handInTimer = 1.25f;
+            circleFill.fillAmount = 0;
+            circleCanvas.gameObject.SetActive(false);
             CheckSwipe(other);
             StartCoroutine(HandReady());
         }
-        else if (other.CompareTag("Palm") && !gameManager.GetSwipe())
-        {
-            circleFill.fillAmount = 0;
-            circleCanvas.gameObject.SetActive(false);
-        }
     }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Finger") && handReady)
+    //    {
+    //        handReady = false;
+    //        handIn = true;
+    //        SaveHandPos(other);
+    //        swipeCooldown = 1.0f;
+    //    }
+    //    else if (other.CompareTag("Palm") && !boxOptions[0].activeSelf)
+    //    {
+    //        circleCanvas.gameObject.SetActive(true);
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Finger") && handIn && swipeCooldown > 0.0f)
+    //    {
+    //        handIn = false;
+    //        CheckSwipe(other);
+    //        StartCoroutine(HandReady());
+    //    }
+    //    else if (other.CompareTag("Palm"))
+    //    {
+    //        circleFill.fillAmount = 0;
+    //        circleCanvas.gameObject.SetActive(false);
+    //    }
+    //}
 
     void Start()
     {
         gameManager = GameManager.Instance;
         circleCanvas.gameObject.SetActive(false);
         circleFill.fillAmount = 0;
+        handInTimer = 1.25f;
         cubeMaterial = GetComponent<MeshRenderer>().material;
         switch (PlayerPrefsManager.Load("Cluster"))
         {
@@ -81,10 +117,7 @@ public class BoxOption : MonoBehaviour
     }
     void Update()
     {
-        if (swipeCooldown > 0)
-        {
-            swipeCooldown -= Time.deltaTime;
-        }
+        Debug.Log("handInTimer: " + handInTimer);
 
         if (circleCanvas.gameObject.activeSelf)
         {
@@ -93,6 +126,7 @@ public class BoxOption : MonoBehaviour
         if (circleFill.fillAmount >= 1)
         {
             circleCanvas.gameObject.SetActive(false);
+            circleFill.fillAmount = 0;
             for (int i = 0; i < boxOptions.Count; i++)
             {
                 boxOptions[i].SetActive(true);
@@ -109,7 +143,7 @@ public class BoxOption : MonoBehaviour
     private void CheckSwipe(Collider hand)
     {
         float swipeDir = handPosY - hand.transform.position.y;
-        if (swipeDir > 0.025f)
+        if (swipeDir > 0.06f)
         {
             Debug.Log("Swiped down");
             listIndicator++;
@@ -119,7 +153,7 @@ public class BoxOption : MonoBehaviour
             }
             cubeMaterial.color = colorsList[listIndicator];
         }
-        else if (swipeDir < -0.025f)
+        else if (swipeDir < -0.06f)
         {
             Debug.Log("Swiped up");
             listIndicator--;
@@ -132,7 +166,8 @@ public class BoxOption : MonoBehaviour
     }
     IEnumerator HandReady()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.1f);
         handReady = true;
+        handLeft = false;
     }
 }

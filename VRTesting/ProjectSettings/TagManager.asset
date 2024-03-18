@@ -9,8 +9,7 @@ TagManager:
   - Button
   - Toggle
   - Option
-  - Finger
-  - Palm
+  - Hand
   layers:
   - Default
   - TransparentFX

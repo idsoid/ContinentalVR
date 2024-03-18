@@ -29,12 +29,6 @@ public class GameManager : MonoBehaviour
 
     //SteamVR Inputs
     #region
-    //Swipe
-    public bool GetSwipe()
-    {
-        return swipeEnabled.GetState(SteamVR_Input_Sources.Any);
-    }
-
     //Height
     public Vector2 GetHeight()
     {

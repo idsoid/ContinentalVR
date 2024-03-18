@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 135000013433154566}
   m_Layer: 8
   m_Name: finger_index_1_r
-  m_TagString: Finger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 135000010681374130}
   m_Layer: 8
   m_Name: finger_index_2_r
-  m_TagString: Finger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 135000011041469328}
   m_Layer: 8
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 135000014001595118}
   m_Layer: 8
   m_Name: Sphere (2)
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 135000012638609432}
   m_Layer: 8
   m_Name: finger_index_0_r
-  m_TagString: Finger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 135000010572779464}
   m_Layer: 8
   m_Name: Sphere (3)
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 135000011391776234}
   m_Layer: 8
   m_Name: Sphere
-  m_TagString: Palm
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
