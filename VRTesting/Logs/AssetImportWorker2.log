@@ -304,3 +304,24 @@ Received Import Request.
 Start importing Assets/DIsplay/MID_3.fbx using Guid(388ac578b74774543855ef29ddfc44f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9185b1bd093706fce4b3824aef595d25') in 0.028294 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 307.945434 seconds.
+  path: Assets/Externals/DIsplay/CID_1.fbx
+  artifactKey: Guid(3d84a3e385d18cb4bb66af733b8a17df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Externals/DIsplay/CID_1.fbx using Guid(3d84a3e385d18cb4bb66af733b8a17df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8beac64a96ae2812519ea160b7a0c69') in 0.021636 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Externals/DIsplay/CID_3.fbx
+  artifactKey: Guid(ce69435d00674ff41814844739745fff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Externals/DIsplay/CID_3.fbx using Guid(ce69435d00674ff41814844739745fff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7be5590d07218de3bd4468bb64ecfcaa') in 0.017321 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

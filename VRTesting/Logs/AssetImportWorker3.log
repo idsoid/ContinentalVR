@@ -256,3 +256,8 @@ Received Import Request.
 Start importing Assets/DIsplay/MID_3.png using Guid(1fda4e0a24f2c534289c55e3083d2599) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9e74dd9720d4c31cdd5d69569b98bd2') in 0.012308 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

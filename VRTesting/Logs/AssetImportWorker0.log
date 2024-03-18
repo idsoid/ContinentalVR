@@ -738,3 +738,8 @@ Received Import Request.
 Start importing Assets/DIsplay/CID_2.fbx using Guid(2bcf46e2ff35f6145979a435985438ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '909b4ac8a1069bc7943d018e0519db87') in 0.036905 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 9
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
